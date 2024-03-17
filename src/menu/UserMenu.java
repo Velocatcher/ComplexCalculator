@@ -1,3 +1,6 @@
+package menu;
+import complex.ComplexNumber;
+import complexoperations.*;
 import java.util.Scanner;
 
 public class UserMenu {
