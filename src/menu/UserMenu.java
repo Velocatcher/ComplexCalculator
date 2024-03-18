@@ -1,5 +1,7 @@
 package menu;
 import complex.*;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserMenu {
@@ -16,7 +18,15 @@ public class UserMenu {
             System.out.println("3: Multiply");
             System.out.println("4: Divide");
             System.out.println("5: Quit\n");
-            choice = input.nextInt();
+
+            try {
+                choice = input.nextInt();
+            } catch (InputMismatchException e) {
+            System.out.println("No number was entered. Please try again");
+            input.nextLine();
+            choice =0;
+            }
+
             //Addition
             if (choice == 1) {
                 AddData resultAdd = new AddData();
@@ -37,6 +47,7 @@ public class UserMenu {
                 DivData resultDiv = new DivData();
                 resultDiv.divData();
             }
+
         }
         System.out.println("\nHave a nice day!\n");
     }
